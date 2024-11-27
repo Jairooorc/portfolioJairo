@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JairoRC - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function loadLanguage(lang) {
+            fetch(lang + '.json')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('sobreMi').textContent = data.sobreMi;
+                    document.getElementById('habilidades').textContent = data.habilidades;
+                    document.getElementById('proyectos').textContent = data.proyectos;
+                    document.getElementById('contacto').textContent = data.contacto;
+                })
+                .catch(error => console.error('Error al cargar el archivo de traducción:', error));
+        }
+    </script>
+</head>
+<body>
+    <aside id="menuLateral">
+        <img src="Multimedia/imagenes/j.png">
+        <h4>Jairo</h4>
+        <p>Web Dev.</p>
+        <br>
+        <hr>
+        <nav>
+            <ul>
+                <li ><a href="sobreMi/sobreMi.html" id="sobreMi">Sobre mi</a></li><hr>
+                <li ><a href="habilidades/habilidades.html" id="habilidades">Habilidades</a></li><hr>
+                <li ><a href="proyectos/proyectos.html" id="proyectos">Proyectos</a></li><hr>
+                <li ><a href="contacto/contacto.html" id="contacto">Contacto</a></li><hr>
+                <li id="idioma">
+                    Idioma ▼
+                    <ul id="submenu">
+                        <li class="menuItem"><a href="#" class="menu-link" onclick="loadLanguage('es')">Español</a></li>
+                        <li class="menuItem"><a href="#" class="menu-link" onclick="loadLanguage('en')">English</a></li>
+                    </ul>
+                </li><hr>
+            </ul>
+        </nav>
+    </aside>
+</body>
+</html>

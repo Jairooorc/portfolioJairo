@@ -1,0 +1,88 @@
+*{
+    padding: 0;
+    margin:0;
+    width: 100%;
+}
+
+@keyframes menuAnim {
+    0%{transform: translateX(0px);}
+    100%{transform: translateX(10px);}
+}
+
+#menuLateral{
+    margin: 0;
+    padding: 5px;
+    width: 15%; 
+    height: 100vmax;
+    background: #3C4243;
+    color: white;
+    min-width: 90px;
+    max-width: 150px;
+}
+
+#menuLateral img{
+    width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+#menuLateral h4{
+    text-align: center;
+}
+#menuLateral p{
+    margin-top: 3px;
+    text-align: center;
+    font-size:x-small;
+    color: lightgrey;
+}
+#menuLateral nav a{
+    text-decoration: none; 
+    color: white;
+}
+#menuLateral nav ul li{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+#menuLateral a:hover{
+    color: #F5EB70;
+    animation: menuAnim 0.5s ease-in-out infinite alternate;
+}
+.menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.menu-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+}
+.menu-link:hover {
+    background-color: #ddd;
+}
+.submenu{
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+}
+.submenuItem{
+    width: 200px;
+}
+.submenu-link{
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    color: #333;
+    background-color: #f2f2f2;
+}
+.submenu-link:hover {
+    background-color: #ddd;
+}
+.menu-item:hover .submenu {
+    display: block;
+}
